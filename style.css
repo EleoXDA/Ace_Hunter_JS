@@ -1,11 +1,48 @@
 :root{
   --card-width:157px;
   --card-height:220px;
+  --num-cards:4;
+  --card-horizontal-space: 100px;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
 }
 
 .card-container {
-  margin-top: 30px;
   position: relative;
+  height:100%;
+  width:calc(var(--card-width) * (var(--num-cards) / 2) + var(--card-horizontal-space));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "a b"
+                       "c d";
+    border: 1px solid black;
+}
+
+.card-pos-a{
+  grid-area: a;
+  border: 1px solid black;
+}
+.card-pos-b{
+  grid-area: b;
+  border: 1px solid black;
+}
+.card-pos-c{
+  grid-area: c;
+  border: 1px solid black;
+}
+.card-pos-d{
+  grid-area: d;
+  border: 1px solid black;
 }
 
 .card {
@@ -14,6 +51,7 @@
   width: var(--card-width);
   perspective: 1000px;
   cursor: pointer;
+  transition: transform 0.6s ease-in-out
 }
 
 .card-inner {
