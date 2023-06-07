@@ -5,20 +5,13 @@ const cardObjectDefinitions = [
   {id:4, imagePath:'../Ace_Hunter_JS/images/card-AceSpades.png'}
 ]
 
+let cardPositions = []
+
 const cardBackImgPath = '../Ace_Hunter_JS/images/card-back-blue.png'
 
 const cardContainerElem = document.querySelector('.card-container');
 
-/* <div class="card">
-<div class="card-inner">
-    <div class="card-front">
-        <img src="/images/card-JackClubs.png" alt="" class="card-img">
-    </div>
-    <div class="card-back">
-        <img src="/images/card-back-Blue.png" alt="" class="card-img">
-    </div>
-</div>
-</div> */
+createCards();
 
 function createCards() {
     cardObjectDefinitions.forEach((cardItem)=>{
@@ -39,6 +32,7 @@ function createCard(cardItem){
 
   // add class and id to card element
   addClassToElement(cardElem, 'card');
+
   addIdToElement(cardElem, cardItem.id);
 
   // add class to inner card element
@@ -83,7 +77,14 @@ function createCard(cardItem){
   initializeCardPositions(cardElem)
 
   attatchClickEventHandlerToCard(cardElem)
+}
 
+function attatchClickEventHandlerToCard(card){
+  card.addEventListener('click', () => chooseCard(card))
+}
+
+function initializeCardPositions(card) {
+    cardPositions.push(card.id)
 }
 
 function createElement(elemType){
@@ -94,7 +95,7 @@ function addClassToElement(elem, className) {
   elem.classList.add(className)
 }
 
-function addToElement(elem, id) {
+function addIdToElement(elem, id) {
   elem.id = id;
 }
 
@@ -112,9 +113,10 @@ function addCardToGridCell(card){
     addChildElement(cardPosElem, card)
 }
 
-function mapCardIdToGridCell(card){
-  if(card.id == 1) '.card-pos-a'
-  else if(card.id == 2) '.card-pos-b'
-  else if(card.id == 3) '.card-pos-c'
-  else if(card.id == 4) '.card-pos-d'
+function mapCardIdToGridCell(card) {
+  if (card.id == 1) return '.card-pos-a';
+  else if (card.id == 2) return '.card-pos-b';
+  else if (card.id == 3) return '.card-pos-c';
+  else if (card.id == 4) return '.card-pos-d';
+  else return null;
 }
