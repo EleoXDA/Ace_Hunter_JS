@@ -180,6 +180,7 @@ function startGame() {
   initializeNewGame();
   startRound();
 }
+
 function initializeNewGame() {
   score = 0;
   roundNum = 0;
@@ -204,12 +205,14 @@ function initializeNewGame() {
     `Round <span class='badge'>${roundNum}</span>`
   );
 }
+
 function startRound() {
   initializeNewRound();
   collectCards();
   flipCards(true);
   shuffleCards();
 }
+
 function initializeNewRound() {
   roundNum++;
   playGameButtonElem.disabled = true;
@@ -241,6 +244,7 @@ function collectCards() {
 function transformGridArea(areas) {
   cardContainerElem.style.gridTemplateAreas = areas;
 }
+
 function addCardsToGridAreaCell(cellPositionClassName) {
   const cellPositionElem = document.querySelector(cellPositionClassName);
 
@@ -293,6 +297,7 @@ function removeShuffleClasses() {
     card.classList.remove("shuffle-right");
   });
 }
+
 function animateShuffle(shuffleCount) {
   const random1 = Math.floor(Math.random() * numCards) + 1;
   const random2 = Math.floor(Math.random() * numCards) + 1;
