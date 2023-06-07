@@ -283,7 +283,7 @@ function cardFlyInEffect() {
       clearInterval(id);
       playGameButtonElem.style.display = "inline-block";
     }
-    if (count == 1 || count == 250 || count == 500 || count == 750) {
+    if (count == 1 || count == 25 || count == 50 || count == 75) {
       cardCount++;
       let card = document.getElementById(cardCount);
       card.classList.remove("fly-in");
