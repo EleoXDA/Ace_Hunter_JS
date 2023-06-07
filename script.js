@@ -1,11 +1,11 @@
 const cardObjectDefinitions = [
-  {id:1, imagePath:'/images/card-KingHearts.png'},
-  {id:2, imagePath:'/images/card-JackClubs.png'},
-  {id:3, imagePath:'/images/card-QueenDiamonds.png'},
-  {id:4, imagePath:'/images/card-AceSpades.png'}
+  {id:1, imagePath:'../Ace_Hunter_JS/images/card-KingHearts.png'},
+  {id:2, imagePath:'../Ace_Hunter_JS/images/card-JackClubs.png'},
+  {id:3, imagePath:'../Ace_Hunter_JS/images/card-QueenDiamonds.png'},
+  {id:4, imagePath:'../Ace_Hunter_JS/images/card-AceSpades.png'}
 ]
 
-const cardBackImgPath = '/images/card-back-blue.png'
+const cardBackImgPath = '../Ace_Hunter_JS/images/card-back-blue.png'
 
 const cardContainerElem = document.querySelector('.card-container');
 
