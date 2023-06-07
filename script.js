@@ -5,7 +5,7 @@ const cardObjectDefinitions = [
   {id:4, imagePath:'../Ace_Hunter_JS/images/card-AceSpades.png'}
 ];
 const aceId = 4;
-const cardBackImgPath = '../Ace_Hunter_JS/images/card-back-blue.png'
+const cardBackImgPath = '../Ace_Hunter_JS/images/card-back-Blue.png'
 let cards = [];
 const playGameButtonElem = document.getElementById("playGame");
 const cardContainerElem = document.querySelector(".card-container");
